@@ -147,7 +147,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2023-11-28 16:59:37
+          2023-11-28 17:06:16
         </span>
         
               <span class="post-categories">
@@ -171,7 +171,7 @@
 
 <p>此时运行几个测试用例是成功通过的，但提交时提示<strong>超出时间限制</strong>。<br>再看代码，一旦arr数组长度变长，双重循环会大大提高算法的时间复杂度，自然也就超时了。该想法简单易实现，却不满足时间复杂度的要求，只能重新换个思路。</p>
 <p>参考官方题解，把思路理了一下。</p>
-<p>以数组**[3,2,4,8,0]**为例，求出以2为最小值的连续子序列数目。</p>
+<p>以数组 <strong>[3,2,4,8,0]</strong> 为例，求出以2为最小值的连续子序列数目。</p>
 <blockquote>
 <p>以2为中心，往左看，在子序列[3,2]中2是最小值；往右看，在子序列[2,4,8]中2是最小值。则以2为最小值的连续子序列数目为<code>2x3=6</code>个。</p>
 <p>可推理出，只要找出数组中每个元素arr[i]以该元素为<strong>最右且最小</strong>的子序列的数目，以及以该元素为<strong>最左且最小</strong>的子序列的数目，即可得出以arr[i]为最小元素的子序列的数目。</p>
@@ -201,7 +201,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2023-11-28 16:59:37
+              2023-11-28 17:06:16
             </span>
             
                   <span class="post-categories">
