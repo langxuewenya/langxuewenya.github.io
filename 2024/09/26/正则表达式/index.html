@@ -147,7 +147,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2024-10-10 18:16:55
+          2024-10-10 20:42:05
         </span>
         
               <span class="post-categories">
@@ -163,7 +163,7 @@
           
       </div>
       <div class="markdown-body">
-        <h3 id="什么是正则表达式？"><a href="#什么是正则表达式？" class="headerlink" title="什么是正则表达式？"></a>什么是正则表达式？</h3><ul>
+        <h2 id="什么是正则表达式？"><a href="#什么是正则表达式？" class="headerlink" title="什么是正则表达式？"></a>什么是正则表达式？</h2><ul>
 <li><p><strong>正则表达式</strong>（英语：regular expression，常简写为regex、regexp或RE），又称<strong>规律表达式</strong>、<strong>正则表示式</strong>、<strong>正则表示法</strong>、<strong>规则表达式</strong>、<strong>常规表示法</strong>。</p>
 </li>
 <li><p>正则表达式使用简单字符串来描述、匹配一系列匹配某个句法规则的字符串。</p>
@@ -205,14 +205,70 @@
 
 
 
+<h2 id="修饰符flag的使用"><a href="#修饰符flag的使用" class="headerlink" title="修饰符flag的使用"></a>修饰符flag的使用</h2><p>常见的修饰符：</p>
+<table>
+<thead>
+<tr>
+<th>flag</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>g</td>
+<td>全部的，匹配全部的（global）</td>
+</tr>
+<tr>
+<td>i</td>
+<td>忽略大小写（ignore）</td>
+</tr>
+<tr>
+<td>m</td>
+<td>多行匹配（multiple）</td>
+</tr>
+</tbody></table>
+<h2 id="规则—字符类（Charactor-classes）"><a href="#规则—字符类（Charactor-classes）" class="headerlink" title="规则—字符类（Charactor classes）"></a>规则—字符类（Charactor classes）</h2><p>字符类（Charactor classes）是一个特殊的符号，匹配特定集中的任何符号。</p>
+<p>常用的字符类：</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\d（digit）</td>
+<td>数字：从0到9的字符</td>
+</tr>
+<tr>
+<td>\s（space）</td>
+<td>空格符号：包括空格、制表符\t，换行符\n和其他少数稀有字符，例如\v，\f和\r</td>
+</tr>
+<tr>
+<td>\w（word）</td>
+<td>”单字“字符：拉丁字母或数字或下划线，等同于[A-Za-z0-9_]</td>
+</tr>
+<tr>
+<td>.（点）</td>
+<td>点：是一种特殊字符类，它与 ”除换行符之外的任何字符“ 匹配</td>
+</tr>
+</tbody></table>
+<h2 id="规则—锚点（Anchors）"><a href="#规则—锚点（Anchors）" class="headerlink" title="规则—锚点（Anchors）"></a>规则—锚点（Anchors）</h2><p>符号^和符号$在正则表达式中具有特殊的意义，它们被称为<strong>锚点</strong>。</p>
+<blockquote>
+<p>^：匹配文本开头</p>
+<p>$：匹配文本末尾</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;hello world.&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> re1 = <span class="regexp">/^hello/ig</span>; <span class="comment">// 匹配是否以字符”hello“开头</span></span><br><span class="line"><span class="keyword">const</span> re2 = <span class="regexp">/world$/ig</span>; <span class="comment">// 匹配是否以字符”world“结尾</span></span><br><span class="line"><span class="keyword">const</span> re3 = <span class="regexp">/world\.$/ig</span>; <span class="comment">// 匹配是否以字符”world.“结尾</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(re1.<span class="title function_">test</span>(str)); <span class="comment">// true </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(re2.<span class="title function_">test</span>(str)); <span class="comment">// false</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(re3.<span class="title function_">test</span>(str)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
 
 
+<h2 id="规则—词边界（Word-boundary）"><a href="#规则—词边界（Word-boundary）" class="headerlink" title="规则—词边界（Word boundary）"></a>规则—词边界（Word boundary）</h2><p>词边界\b是一种检查，就像^和$一样，它会检查字符串中的位置是否是词边界。</p>
+<p>词边界测试\b检查位置的一侧是否匹配\w，而另一侧则不匹配\w。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配时间</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;now time is 19:05, 20:00, number is 123:456&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> re1 = <span class="regexp">/\d\d:\d\d/ig</span>;</span><br><span class="line"><span class="keyword">const</span> re2 = <span class="regexp">/\b\d\d:\d\d\b/ig</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(re1)); <span class="comment">// [&#x27;19:05&#x27;, &#x27;20:00&#x27;, &#x27;23:45&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(re2)); <span class="comment">// [&#x27;19:05&#x27;, &#x27;20:00&#x27;]</span></span><br></pre></td></tr></table></figure>
 
 
 
-
-
+<h2 id="规则—转义字符串"><a href="#规则—转义字符串" class="headerlink" title="规则—转义字符串"></a>规则—转义字符串</h2><p>需要把特殊字符作为常规字符来使用时，需要对其进行转义：在它前面加个反斜杠（\）即可</p>
+<p> 常规的需要转义的字符：**[ ] \ ^ $ . | ? * + ( ) &#x2F;** </p>
 
       </div>
       
@@ -228,7 +284,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2024-10-10 18:16:55
+              2024-10-10 20:42:05
             </span>
             
                   <span class="post-categories">
@@ -262,7 +318,7 @@
     <div class="title">目录</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">什么是正则表达式？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">怎么创建正则表达式？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">正则表达式的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-text">一、使用正则对象上的实例方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BC%A0%E5%85%A5%E4%B8%80%E4%B8%AA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">二、使用字符串的方法，传入一个正则表达式</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">什么是正则表达式？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">怎么创建正则表达式？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">正则表达式的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-text">一、使用正则对象上的实例方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BC%A0%E5%85%A5%E4%B8%80%E4%B8%AA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">二、使用字符串的方法，传入一个正则表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6flag%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">修饰符flag的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E2%80%94%E5%AD%97%E7%AC%A6%E7%B1%BB%EF%BC%88Charactor-classes%EF%BC%89"><span class="toc-text">规则—字符类（Charactor classes）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E2%80%94%E9%94%9A%E7%82%B9%EF%BC%88Anchors%EF%BC%89"><span class="toc-text">规则—锚点（Anchors）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E2%80%94%E8%AF%8D%E8%BE%B9%E7%95%8C%EF%BC%88Word-boundary%EF%BC%89"><span class="toc-text">规则—词边界（Word boundary）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E2%80%94%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">规则—转义字符串</span></a></li></ol>
       
     </div>
   </div>
