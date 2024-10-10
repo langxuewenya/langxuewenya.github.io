@@ -147,7 +147,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2024-10-10 16:46:55
+          2024-10-10 18:16:55
         </span>
         
               <span class="post-categories">
@@ -195,10 +195,24 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;187abcedu ABcso34 w3AbCd abC367j&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> re1 = <span class="regexp">/abc/ig</span>; <span class="comment">// g表示全局搜索</span></span><br><span class="line"><span class="keyword">const</span> res = str.<span class="title function_">matchAll</span>(re1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="title function_">next</span>()); <span class="comment">// 通过.next打印迭代器的内容</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="title function_">next</span>());</span><br></pre></td></tr></table></figure>
 
 <p>3、search：在字符串中测试是否匹配，它返回匹配到的位置索引，失败时返回-1。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;187iabcedu ABcso34 w3AbCd abC367j&quot;</span>;  <span class="comment">// 一个字符串</span></span><br><span class="line"><span class="keyword">const</span> re1 = <span class="regexp">/abc/ig</span>;</span><br><span class="line"><span class="keyword">const</span> res = str.<span class="title function_">search</span>(re1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+
 <p>4、replace：在字符串中执行查找匹配，并使用替换字符串替换掉匹配到的子字符串。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;187abcedu ABcso34 w3AbCd abC367j&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将字符串中所有“abc”替换成“cba”（不区分大小写）</span></span><br><span class="line"><span class="keyword">const</span> newStr = str.<span class="title function_">replaceAll</span>(<span class="regexp">/abc/ig</span>, <span class="string">&quot;cba&quot;</span>); <span class="comment">// 187cbaedu cbaso34 w3cbad cba367j</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将字符串中所有数字删除</span></span><br><span class="line"><span class="keyword">const</span> newStr = str.<span class="title function_">replaceAll</span>(<span class="regexp">/\d+/ig</span>, <span class="string">&quot;cba&quot;</span>); <span class="comment">// cbaabcedu ABcsocba wcbaAbCd abCcbaj</span></span><br></pre></td></tr></table></figure>
 
 <p>5、split：使用正则表达式或一个固定字符串分割一个字符串，并将分隔后的子字符串存储到数组中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;187iabcedu ABcso34 w3AbCd abC367j&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> re1 = <span class="regexp">/abc/ig</span>;</span><br><span class="line"><span class="keyword">const</span> res = str.<span class="title function_">split</span>(re1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res); <span class="comment">// [&#x27;187i&#x27;, &#x27;edu &#x27;, &#x27;so34 w3&#x27;, &#x27;d &#x27;, &#x27;367j&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
 
       </div>
       
@@ -214,7 +228,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2024-10-10 16:46:55
+              2024-10-10 18:16:55
             </span>
             
                   <span class="post-categories">
