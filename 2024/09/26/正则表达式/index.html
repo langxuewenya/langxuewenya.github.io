@@ -147,7 +147,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2024-10-09 19:57:45
+          2024-10-10 16:46:55
         </span>
         
               <span class="post-categories">
@@ -172,12 +172,12 @@
 </li>
 </ul>
 <p><strong>简单概括</strong>：<strong>正则表达式是一种字符串匹配利器，可以帮助我们搜索、获取、替代字符串。</strong></p>
-<h3 id="怎么创建正则表达式？"><a href="#怎么创建正则表达式？" class="headerlink" title="怎么创建正则表达式？"></a>怎么创建正则表达式？</h3><p>在JavaScript中，正则表达式使用RegExp类来创建：</p>
+<h2 id="怎么创建正则表达式？"><a href="#怎么创建正则表达式？" class="headerlink" title="怎么创建正则表达式？"></a>怎么创建正则表达式？</h2><p>在JavaScript中，正则表达式使用RegExp类来创建：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过类来创建</span></span><br><span class="line"><span class="comment">// 传入2个参数：1.匹配的规则patterns  2.匹配的修饰符flags</span></span><br><span class="line"><span class="keyword">const</span> re1 = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;i&quot;</span>);</span><br><span class="line"><span class="comment">// 通过字面量来创建</span></span><br><span class="line"><span class="keyword">const</span> re2 = <span class="regexp">/hello/i</span>;</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="正则表达式的使用方法"><a href="#正则表达式的使用方法" class="headerlink" title="正则表达式的使用方法"></a>正则表达式的使用方法</h3><h4 id="一、使用正则对象上的实例方法"><a href="#一、使用正则对象上的实例方法" class="headerlink" title="一、使用正则对象上的实例方法"></a>一、使用正则对象上的实例方法</h4><p>1、exec：在字符串中执行查找匹配，它返回一个数组（未匹配到则返回null）。</p>
+<h2 id="正则表达式的使用方法"><a href="#正则表达式的使用方法" class="headerlink" title="正则表达式的使用方法"></a>正则表达式的使用方法</h2><h3 id="一、使用正则对象上的实例方法"><a href="#一、使用正则对象上的实例方法" class="headerlink" title="一、使用正则对象上的实例方法"></a>一、使用正则对象上的实例方法</h3><p>1、exec：在字符串中执行查找匹配，它返回一个数组（未匹配到则返回null）。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 需求：匹配给定字符串“hello”后的所有字符</span></span><br><span class="line"><span class="comment">// \s：匹配任何空白字符，包括空格、制表符、换页符等</span></span><br><span class="line"><span class="comment">// \S：匹配任何非空白字符</span></span><br><span class="line"><span class="keyword">const</span> matches = <span class="regexp">/hello(\s+\S+)+/</span>.<span class="title function_">exec</span>(<span class="string">&quot;This is a hello world! hello!&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(matches); <span class="comment">// 返回的数组</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(matches[<span class="number">0</span>]); <span class="comment">// hello world! hello!</span></span><br></pre></td></tr></table></figure>
 
 <p>2、test：在字符串中测试是否匹配，它返回true或false。</p>
@@ -185,7 +185,7 @@
 
 
 
-<h4 id="二、使用字符串的方法，传入一个正则表达式"><a href="#二、使用字符串的方法，传入一个正则表达式" class="headerlink" title="二、使用字符串的方法，传入一个正则表达式"></a>二、使用字符串的方法，传入一个正则表达式</h4><p>1、match：在字符串中执行查找匹配，它返回一个数组（未匹配到则返回null）。</p>
+<h3 id="二、使用字符串的方法，传入一个正则表达式"><a href="#二、使用字符串的方法，传入一个正则表达式" class="headerlink" title="二、使用字符串的方法，传入一个正则表达式"></a>二、使用字符串的方法，传入一个正则表达式</h3><p>1、match：在字符串中执行查找匹配，它返回一个数组（未匹配到则返回null）。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;187abcedu ABcso34 w3AbCd abC367j&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> re1 = <span class="regexp">/abc/ig</span>; <span class="comment">// g表示全局搜索</span></span><br><span class="line"><span class="keyword">const</span> res = str.<span class="title function_">match</span>(re1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res); <span class="comment">// [&#x27;abc&#x27;, &#x27;ABc&#x27;, &#x27;AbC&#x27;, &#x27;abC&#x27;]</span></span><br></pre></td></tr></table></figure>
 
 <p>2、matchAll：在字符串中执行查找所有匹配，它返回一个迭代器（iterator）。</p>
@@ -214,7 +214,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2024-10-09 19:57:45
+              2024-10-10 16:46:55
             </span>
             
                   <span class="post-categories">
@@ -248,7 +248,7 @@
     <div class="title">目录</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">什么是正则表达式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">怎么创建正则表达式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">正则表达式的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-text">一、使用正则对象上的实例方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BC%A0%E5%85%A5%E4%B8%80%E4%B8%AA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">二、使用字符串的方法，传入一个正则表达式</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">什么是正则表达式？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">怎么创建正则表达式？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">正则表达式的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-text">一、使用正则对象上的实例方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BC%A0%E5%85%A5%E4%B8%80%E4%B8%AA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">二、使用字符串的方法，传入一个正则表达式</span></a></li></ol>
       
     </div>
   </div>
