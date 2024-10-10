@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2023 
+      图的遍历 
       
       
       |
@@ -98,102 +98,152 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2024</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">图的遍历</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2023-12-12 15:24:06
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="分类"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构">
+                    <b>#</b> 数据结构
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>（周末发烧了，一天昏睡，一天躺，到今天还有点流鼻涕、喉咙卡痰的后遗症，珍惜每一个健康的日子，从刷题开始）</p>
+<p>之前遇到图的遍历算法题，大多选择了跳过，今天就好好学习整理一下8</p>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><blockquote>
+<p>对于给定的图，沿着一些边（或弧）访问图中所有的顶点，且使每个顶点仅被访问一次，这个过程就叫作图的遍历。</p>
+</blockquote>
+<p>图的遍历通常有两种方法：<code>深度优先遍历</code>和<code>广度优先遍历</code>。</p>
+<h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><p>图的深度优先遍历基于<strong>深度优先搜索（DFS）</strong>，深度优先搜索是从图中某一顶点 v 出发，在访问顶点 v 后，再依次从 v 的任一还没被访问过的邻接顶点 w 出发进行深度优先搜索，直到图中所有与顶点 v 有路径相通的顶点都被访问过为止。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/11/28/Promise/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2023-12-12 15:24:06
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="分类"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构">
+                        <b>#</b> 数据结构
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2024/09/26/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
         </div>
       
-      <div class="post-item" title="">
-        <div class="time-m-d">10-10</div>
-        <div class="title">
-          <a href="/2024/10/10/git-pull-github-%E9%A1%B9%E7%9B%AE%E4%B8%80%E7%9B%B4%E6%8A%A5%E9%94%99/">
-            <span></span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="正则表达式">
-        <div class="time-m-d">09-26</div>
-        <div class="title">
-          <a href="/2024/09/26/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-            <span>正则表达式</span>
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2023</span>
-          </h2>
-        </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
       
-      <div class="post-item" title="图的遍历">
-        <div class="time-m-d">12-05</div>
-        <div class="title">
-          <a href="/2023/12/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">
-            <span>图的遍历</span>
-          </a>
-        </div>
-      </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-text">图的遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86"><span class="toc-text">深度优先遍历</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="Promise">
-        <div class="time-m-d">11-28</div>
-        <div class="title">
-          <a href="/2023/11/28/Promise/">
-            <span>Promise</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="子数组的最小值之和">
-        <div class="time-m-d">11-28</div>
-        <div class="title">
-          <a href="/2023/11/28/%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E4%B9%8B%E5%92%8C/">
-            <span>子数组的最小值之和</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="二叉树">
-        <div class="time-m-d">11-25</div>
-        <div class="title">
-          <a href="/2023/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-            <span>二叉树</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="onload、onready（DOMContentLoaded）、defer">
-        <div class="time-m-d">11-24</div>
-        <div class="title">
-          <a href="/2023/11/24/onload%E3%80%81onready%EF%BC%88DOMContentLoaded%EF%BC%89%E3%80%81defer/">
-            <span>onload、onready（DOMContentLoaded）、defer</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="GitHub+Hexo搭建个人博客">
-        <div class="time-m-d">11-24</div>
-        <div class="title">
-          <a href="/2023/11/24/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-            <span>GitHub+Hexo搭建个人博客</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -450,6 +500,24 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86 + '&url=' + http%3A%2F%2Fexample.com%2F2023%2F12%2F05%2F%25E5%259B%25BE%25E7%259A%2584%25E9%2581%258D%25E5%258E%2586%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2023/12/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>

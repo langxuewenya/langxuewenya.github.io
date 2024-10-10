@@ -11,11 +11,6 @@
   
   <title>
     
-      archive_a: 2023 
-      
-      
-      |
-    
      Hexo
   </title>
 
@@ -98,102 +93,152 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2024</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title"></div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2024-10-10 16:38:26
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="分类"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/git/" title="git">
+                    <b>#</b> git
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>在自己电脑上拉取GitHub上的项目，想执行<code>git pull</code>这个命令，发现一直报错如下：</p>
+<p><img src="https://github.com/Langxuewen/blog-image/blob/main/image-20241010161635.png?raw=true"></p>
+<p>查阅得知这是由于本机系统代理端口和git端口不一致导致的。</p>
+<h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p>1、查看本机系统代理端口：</p>
+<p><img src="https://github.com/Langxuewen/blog-image/blob/main/image-20241010163208.png?raw=true"></p>
+<p>2、修改git配置：</p>
+<p>网上查到的指令最后端口一般为10809，此时需要把这个端口改成本机代理的端口</p>
+<blockquote>
+<p>git config –global http.proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:4780/">http://127.0.0.1:4780</a></p>
+<p>git config –global https.proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:4780/">http://127.0.0.1:4780</a></p>
+</blockquote>
+<p>3、再次pull就成功啦</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2024/09/26/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2024-10-10 16:38:26
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="分类"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/git/" title="git">
+                        <b>#</b> git
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="">
-        <div class="time-m-d">10-10</div>
-        <div class="title">
-          <a href="/2024/10/10/git-pull-github-%E9%A1%B9%E7%9B%AE%E4%B8%80%E7%9B%B4%E6%8A%A5%E9%94%99/">
-            <span></span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="正则表达式">
-        <div class="time-m-d">09-26</div>
-        <div class="title">
-          <a href="/2024/09/26/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-            <span>正则表达式</span>
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2023</span>
-          </h2>
-        </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
       
-      <div class="post-item" title="图的遍历">
-        <div class="time-m-d">12-05</div>
-        <div class="title">
-          <a href="/2023/12/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">
-            <span>图的遍历</span>
-          </a>
-        </div>
-      </div>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%9A"><span class="toc-text">解决办法：</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="Promise">
-        <div class="time-m-d">11-28</div>
-        <div class="title">
-          <a href="/2023/11/28/Promise/">
-            <span>Promise</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="子数组的最小值之和">
-        <div class="time-m-d">11-28</div>
-        <div class="title">
-          <a href="/2023/11/28/%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E4%B9%8B%E5%92%8C/">
-            <span>子数组的最小值之和</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="二叉树">
-        <div class="time-m-d">11-25</div>
-        <div class="title">
-          <a href="/2023/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-            <span>二叉树</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="onload、onready（DOMContentLoaded）、defer">
-        <div class="time-m-d">11-24</div>
-        <div class="title">
-          <a href="/2023/11/24/onload%E3%80%81onready%EF%BC%88DOMContentLoaded%EF%BC%89%E3%80%81defer/">
-            <span>onload、onready（DOMContentLoaded）、defer</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="GitHub+Hexo搭建个人博客">
-        <div class="time-m-d">11-24</div>
-        <div class="title">
-          <a href="/2023/11/24/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-            <span>GitHub+Hexo搭建个人博客</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -450,6 +495,24 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' +  + '&url=' + http%3A%2F%2Fexample.com%2F2024%2F10%2F10%2Fgit-pull-github-%25E9%25A1%25B9%25E7%259B%25AE%25E4%25B8%2580%25E7%259B%25B4%25E6%258A%25A5%25E9%2594%2599%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2024/10/10/git-pull-github-%E9%A1%B9%E7%9B%AE%E4%B8%80%E7%9B%B4%E6%8A%A5%E9%94%99/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>

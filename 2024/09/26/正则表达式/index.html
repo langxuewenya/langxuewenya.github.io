@@ -11,7 +11,7 @@
   
   <title>
     
-      onload、onready（DOMContentLoaded）、defer 
+      正则表达式 
       
       
       |
@@ -143,19 +143,19 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">onload、onready（DOMContentLoaded）、defer</div>
+      <div class="post-title">正则表达式</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2023-11-24 17:03:12
+          2024-10-09 19:57:45
         </span>
         
               <span class="post-categories">
                 <i class="iconfont icon-bookmark" title="分类"></i>
                 
                 <span class="span--category">
-                  <a href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/" title="浏览器原理">
-                    <b>#</b> 浏览器原理
+                  <a href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">
+                    <b>#</b> 正则表达式
                   </a>
                 </span>
                 
@@ -163,54 +163,49 @@
           
       </div>
       <div class="markdown-body">
-        <p>这篇文章是看了一个小姐姐的面试总结后写的，包括这道题也是她遇到的面试题，可以更好的辅助理解<strong>onload、onready（DOMContentLoaded）、defer</strong>这三者的区别。</p>
-<p>请给出以下代码的输出结果</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./a.js&quot;</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> // a.js文件为console.log(&quot;a finish&quot;);</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./b.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> // b.js文件为console.log(&quot;b finish&quot;);</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;event start&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;DOMContentLoaded finish&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;onload finish&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">let</span> i = <span class="number">0</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">while</span>(i &lt; <span class="number">1000</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                i++;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;conpute finish&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>浏览器输出的结果为：</p>
-<p><img src="https://github.com/langxuewenya/my-images/raw/main/image-20231124154105567.png" alt="image-20231124154105567"></p>
-<p>这道题其实是考察onload、onready（DOMContentLoaded）、defer的差异</p>
-<p>浏览器加载静态资源的步骤：</p>
-<blockquote>
-<p>1、解析html结构<br>2、加载外部js脚本和样式表文件（预扫描）<br>3、解析并执行js脚本<br>4、dom树构建完成 - html解析完毕（完毕后触发<code>onready</code> -&gt; 即<code>DOMContentLoaded</code>）<br>5、加载图片等外部文件（完成后触发 图片<code>onload</code>）<br>6、页面加载完毕（完成后触发 页面<code>onload</code>）</p>
-</blockquote>
-<p><code>defer</code>—在html解析完成后执行，在触发<code>DOMContentLoaded</code>事件前执行</p>
-<h4 id="onready（DOMContentLoaded）和onload有什么区别？"><a href="#onready（DOMContentLoaded）和onload有什么区别？" class="headerlink" title="onready（DOMContentLoaded）和onload有什么区别？"></a>onready（DOMContentLoaded）和onload有什么区别？</h4><table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">DOMContentLoaded</th>
-<th align="center">onload</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">执行时机</td>
-<td align="center">html解析完毕后执行</td>
-<td align="center">页面<strong>所有</strong>元素都完成加载后执行</td>
-</tr>
-<tr>
-<td align="center">执行次数</td>
-<td align="center">可以执行多个，且可按顺序执行</td>
-<td align="center">只执行最后一个</td>
-</tr>
-</tbody></table>
-<h4 id="onready（DOMContentLoaded）"><a href="#onready（DOMContentLoaded）" class="headerlink" title="onready（DOMContentLoaded）"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/DOMContentLoaded_event">onready（DOMContentLoaded）</a></h4><p>当 HTML 文档完全解析，且所有延迟脚本（<code>&lt;script defer src=&quot;...&quot;&gt;</code> 和 <code>&lt;script type=&quot;module&quot;&gt;</code>）下载和执行完毕后，会触发 <strong><code>DOMContentLoaded</code></strong> 事件。它不会等待图片、子框架和异步脚本等其他内容完成加载。</p>
-<h5 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 addEventListener() 方法中使用事件名称</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;DOMContentLoaded&quot;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;DOM 完全加载和解析&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 设置事件处理器属性</span></span><br><span class="line">onDOMContentLoaded = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;&#125;;</span><br></pre></td></tr></table></figure>
+        <h3 id="什么是正则表达式？"><a href="#什么是正则表达式？" class="headerlink" title="什么是正则表达式？"></a>什么是正则表达式？</h3><ul>
+<li><p><strong>正则表达式</strong>（英语：regular expression，常简写为regex、regexp或RE），又称<strong>规律表达式</strong>、<strong>正则表示式</strong>、<strong>正则表示法</strong>、<strong>规则表达式</strong>、<strong>常规表示法</strong>。</p>
+</li>
+<li><p>正则表达式使用简单字符串来描述、匹配一系列匹配某个句法规则的字符串。</p>
+</li>
+<li><p>许多程序设计语言都支持用正则表达式操作字符串。</p>
+</li>
+</ul>
+<p><strong>简单概括</strong>：<strong>正则表达式是一种字符串匹配利器，可以帮助我们搜索、获取、替代字符串。</strong></p>
+<h3 id="怎么创建正则表达式？"><a href="#怎么创建正则表达式？" class="headerlink" title="怎么创建正则表达式？"></a>怎么创建正则表达式？</h3><p>在JavaScript中，正则表达式使用RegExp类来创建：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过类来创建</span></span><br><span class="line"><span class="comment">// 传入2个参数：1.匹配的规则patterns  2.匹配的修饰符flags</span></span><br><span class="line"><span class="keyword">const</span> re1 = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;i&quot;</span>);</span><br><span class="line"><span class="comment">// 通过字面量来创建</span></span><br><span class="line"><span class="keyword">const</span> re2 = <span class="regexp">/hello/i</span>;</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="onload"><a href="#onload" class="headerlink" title="onload"></a>onload</h4><p><strong><code>load</code></strong> 事件在整个页面及所有依赖资源如样式表和图片都已完成加载时触发。它与 <code>DOMContentLoaded</code> 不同，后者只要页面 DOM 加载完成就触发，无需等待依赖资源的加载。</p>
-<h5 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;page is fully loaded&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">onload = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="正则表达式的使用方法"><a href="#正则表达式的使用方法" class="headerlink" title="正则表达式的使用方法"></a>正则表达式的使用方法</h3><h4 id="一、使用正则对象上的实例方法"><a href="#一、使用正则对象上的实例方法" class="headerlink" title="一、使用正则对象上的实例方法"></a>一、使用正则对象上的实例方法</h4><p>1、exec：在字符串中执行查找匹配，它返回一个数组（未匹配到则返回null）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 需求：匹配给定字符串“hello”后的所有字符</span></span><br><span class="line"><span class="comment">// \s：匹配任何空白字符，包括空格、制表符、换页符等</span></span><br><span class="line"><span class="comment">// \S：匹配任何非空白字符</span></span><br><span class="line"><span class="keyword">const</span> matches = <span class="regexp">/hello(\s+\S+)+/</span>.<span class="title function_">exec</span>(<span class="string">&quot;This is a hello world! hello!&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(matches); <span class="comment">// 返回的数组</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(matches[<span class="number">0</span>]); <span class="comment">// hello world! hello!</span></span><br></pre></td></tr></table></figure>
+
+<p>2、test：在字符串中测试是否匹配，它返回true或false。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 需求：测试字符串中是否包含“abc&quot;</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;187abcedu ABcso34 w3AbCd abC367j&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> re1 = <span class="regexp">/abc/ig</span>; <span class="comment">// 正则</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line"><span class="keyword">if</span> (re1.<span class="title function_">test</span>(str)) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;字符串中包含”abc&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;字符串中不包含”abc&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
+<h4 id="二、使用字符串的方法，传入一个正则表达式"><a href="#二、使用字符串的方法，传入一个正则表达式" class="headerlink" title="二、使用字符串的方法，传入一个正则表达式"></a>二、使用字符串的方法，传入一个正则表达式</h4><p>1、match：在字符串中执行查找匹配，它返回一个数组（未匹配到则返回null）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;187abcedu ABcso34 w3AbCd abC367j&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> re1 = <span class="regexp">/abc/ig</span>; <span class="comment">// g表示全局搜索</span></span><br><span class="line"><span class="keyword">const</span> res = str.<span class="title function_">match</span>(re1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res); <span class="comment">// [&#x27;abc&#x27;, &#x27;ABc&#x27;, &#x27;AbC&#x27;, &#x27;abC&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p>2、matchAll：在字符串中执行查找所有匹配，它返回一个迭代器（iterator）。</p>
+<ul>
+<li><code>matchAll</code>传入的正则修饰符必须加g（全局搜索）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;187abcedu ABcso34 w3AbCd abC367j&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> re1 = <span class="regexp">/abc/ig</span>; <span class="comment">// g表示全局搜索</span></span><br><span class="line"><span class="keyword">const</span> res = str.<span class="title function_">matchAll</span>(re1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="title function_">next</span>()); <span class="comment">// 通过.next打印迭代器的内容</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="title function_">next</span>());</span><br></pre></td></tr></table></figure>
+
+<p>3、search：在字符串中测试是否匹配，它返回匹配到的位置索引，失败时返回-1。</p>
+<p>4、replace：在字符串中执行查找匹配，并使用替换字符串替换掉匹配到的子字符串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;187abcedu ABcso34 w3AbCd abC367j&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将字符串中所有“abc”替换成“cba”（不区分大小写）</span></span><br><span class="line"><span class="keyword">const</span> newStr = str.<span class="title function_">replaceAll</span>(<span class="regexp">/abc/ig</span>, <span class="string">&quot;cba&quot;</span>); <span class="comment">// 187cbaedu cbaso34 w3cbad cba367j</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将字符串中所有数字删除</span></span><br><span class="line"><span class="keyword">const</span> newStr = str.<span class="title function_">replaceAll</span>(<span class="regexp">/\d+/ig</span>, <span class="string">&quot;cba&quot;</span>); <span class="comment">// cbaabcedu ABcsocba wcbaAbCd abCcbaj</span></span><br></pre></td></tr></table></figure>
+
+<p>5、split：使用正则表达式或一个固定字符串分割一个字符串，并将分隔后的子字符串存储到数组中。</p>
 
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2023/11/24/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_self">
+              <a href="/2023/12/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>上一页</span>
               </a>
@@ -219,15 +214,15 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2023-11-24 17:03:12
+              2024-10-09 19:57:45
             </span>
             
                   <span class="post-categories">
                     <i class="iconfont icon-bookmark" title="分类"></i>
                     
                     <span class="span--category">
-                      <a href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/" title="浏览器原理">
-                        <b>#</b> 浏览器原理
+                      <a href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">
+                        <b>#</b> 正则表达式
                       </a>
                     </span>
                     
@@ -236,7 +231,7 @@
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2023/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91/" target="_self">
+              <a href="/2024/10/10/git-pull-github-%E9%A1%B9%E7%9B%AE%E4%B8%80%E7%9B%B4%E6%8A%A5%E9%94%99/" target="_self">
                 <span>下一页</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
@@ -253,7 +248,7 @@
     <div class="title">目录</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#onready%EF%BC%88DOMContentLoaded%EF%BC%89%E5%92%8Conload%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">onready（DOMContentLoaded）和onload有什么区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#onready%EF%BC%88DOMContentLoaded%EF%BC%89"><span class="toc-text">onready（DOMContentLoaded）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%B3%95"><span class="toc-text">用法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#onload"><span class="toc-text">onload</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%B3%95-1"><span class="toc-text">用法</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">什么是正则表达式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">怎么创建正则表达式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">正则表达式的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-text">一、使用正则对象上的实例方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BC%A0%E5%85%A5%E4%B8%80%E4%B8%AA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">二、使用字符串的方法，传入一个正则表达式</span></a></li></ol></li></ol>
       
     </div>
   </div>
@@ -541,12 +536,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + onload%E3%80%81onready%EF%BC%88DOMContentLoaded%EF%BC%89%E3%80%81defer + '&url=' + http%3A%2F%2Fexample.com%2F2023%2F11%2F24%2Fonload%25E3%2580%2581onready%25EF%25BC%2588DOMContentLoaded%25EF%25BC%2589%25E3%2580%2581defer%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F + '&url=' + http%3A%2F%2Fexample.com%2F2024%2F09%2F26%2F%25E6%25AD%25A3%25E5%2588%2599%25E8%25A1%25A8%25E8%25BE%25BE%25E5%25BC%258F%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2023/11/24/onload%E3%80%81onready%EF%BC%88DOMContentLoaded%EF%BC%89%E3%80%81defer/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2024/09/26/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
