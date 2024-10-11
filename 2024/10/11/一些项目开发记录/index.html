@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2023/11 
+      一些项目开发记录 
       
       
       |
@@ -98,120 +98,151 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2024</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">一些项目开发记录</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2024-10-11 21:08:46
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="分类"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" title="项目开发记录">
+                    <b>#</b> 项目开发记录
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h2 id="vue项目中引用iconfont图标库图标"><a href="#vue项目中引用iconfont图标库图标" class="headerlink" title="vue项目中引用iconfont图标库图标"></a>vue项目中引用iconfont图标库图标</h2><p>1、<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">进入官网</a>，找到需要的图标，添加入库</p>
+<p>2、点开购物车图标，将新加入库的图标添加至项目，没有项目就新建一个项目</p>
+<p><img src="https://github.com/Langxuewen/blog-image/blob/main/2024-10-11_20-59-53.png?raw=true"></p>
+<p>3、选择Font class，点击生成代码，复制生成的代码</p>
+<p><img src="https://github.com/Langxuewen/blog-image/blob/main/2024-10-11_21-02-32.png?raw=true"></p>
+<p>4、到需要使用的项目中，找到index.html文件，加入如下代码，href内容为刚刚复制的代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;//at.alicdn.com/t/c/font_4707901_tbhbw4vgm7b.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>5、使用图标</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=&quot;iconfont icon-eye&quot;&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2024/10/10/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%BA%94%E7%94%A8/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2024-10-11 21:08:46
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="分类"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" title="项目开发记录">
+                        <b>#</b> 项目开发记录
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="一些项目开发记录">
-        <div class="time-m-d">10-11</div>
-        <div class="title">
-          <a href="/2024/10/11/%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">
-            <span>一些项目开发记录</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="正则表达式的应用">
-        <div class="time-m-d">10-10</div>
-        <div class="title">
-          <a href="/2024/10/10/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%BA%94%E7%94%A8/">
-            <span>正则表达式的应用</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="git pull github 项目一直报错">
-        <div class="time-m-d">10-10</div>
-        <div class="title">
-          <a href="/2024/10/10/git-pull-github-%E9%A1%B9%E7%9B%AE%E4%B8%80%E7%9B%B4%E6%8A%A5%E9%94%99/">
-            <span>git pull github 项目一直报错</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="正则表达式">
-        <div class="time-m-d">09-26</div>
-        <div class="title">
-          <a href="/2024/09/26/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-            <span>正则表达式</span>
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2023</span>
-          </h2>
-        </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
       
-      <div class="post-item" title="图的遍历">
-        <div class="time-m-d">12-05</div>
-        <div class="title">
-          <a href="/2023/12/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">
-            <span>图的遍历</span>
-          </a>
-        </div>
-      </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BC%95%E7%94%A8iconfont%E5%9B%BE%E6%A0%87%E5%BA%93%E5%9B%BE%E6%A0%87"><span class="toc-text">vue项目中引用iconfont图标库图标</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="Promise">
-        <div class="time-m-d">11-28</div>
-        <div class="title">
-          <a href="/2023/11/28/Promise/">
-            <span>Promise</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="子数组的最小值之和">
-        <div class="time-m-d">11-28</div>
-        <div class="title">
-          <a href="/2023/11/28/%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E4%B9%8B%E5%92%8C/">
-            <span>子数组的最小值之和</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="二叉树">
-        <div class="time-m-d">11-25</div>
-        <div class="title">
-          <a href="/2023/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-            <span>二叉树</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="onload、onready（DOMContentLoaded）、defer">
-        <div class="time-m-d">11-24</div>
-        <div class="title">
-          <a href="/2023/11/24/onload%E3%80%81onready%EF%BC%88DOMContentLoaded%EF%BC%89%E3%80%81defer/">
-            <span>onload、onready（DOMContentLoaded）、defer</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="GitHub+Hexo搭建个人博客">
-        <div class="time-m-d">11-24</div>
-        <div class="title">
-          <a href="/2023/11/24/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-            <span>GitHub+Hexo搭建个人博客</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -468,6 +499,24 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95 + '&url=' + http%3A%2F%2Fexample.com%2F2024%2F10%2F11%2F%25E4%25B8%2580%25E4%25BA%259B%25E9%25A1%25B9%25E7%259B%25AE%25E5%25BC%2580%25E5%258F%2591%25E8%25AE%25B0%25E5%25BD%2595%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2024/10/11/%E4%B8%80%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>
